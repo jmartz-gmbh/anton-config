@@ -23,6 +23,10 @@ class Config{
     }
 
     public function getProjectConfig(string $project){
+        if(empty($this->config[$project])){
+            throw new \Exception('Project not found.');
+        }
+
         return $this->config[$project];
     }
 }
